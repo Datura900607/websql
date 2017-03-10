@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="datura"/>
+    <meta name="copyright" content="版权"/>
+    <meta name="description" content="描述"/>
+    <meta name="keywords" content="关键字"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="screen-orientation" content="portrait"><!-- uc强制竖屏 -->
+    <meta name="x5-orientation" content="portrait"><!-- QQ强制竖屏 -->
+    <title>Title</title>
+    <style>
+        .content {
+            padding-top: 50px;
+        }
+        .websql {
+            margin-top: 10px;
+        }
+        /* 设置按钮样式 */
+        .websql input[type=button] {
+            height: 44px;
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="websql">    
+            <input type="button" value="新建数据库" onclick="creatTable()">                      
+        </div>              
+        <div class="websql">                  
+            <!--增-->
+            <input type="button" value="插入数据" onclick="insterData()">                               
+        </div>              
+        <div class="websql">                  
+            <!--删-->       
+            <input type="button" value="删除一条数据" onclick="deleteAData()">  
+            <input type="button" value="删除全部数据" onclick="deleteAllData()">                       
+        </div>              
+        <div class="websql">                  
+            <!--改-->
+            <input type="button" value="修改数据" onclick="updateData()">                             
+        </div>              
+        <div class="websql">                  
+            <!--查-->    
+            <input type="button" value="查找一条数据" onclick="selectAData()"> 
+            <input type="button" value="查找全部数据" onclick="selectALlData()">                             
+        </div>          
+    </div>
+</body>
+<script src="websql.js"></script>
+<script type="text/javascript">
+        function creatTable() {               
+            console.log("新建数据库");
+            websqlOpenDB();                
+            websqlCreatTable(websqlTable);      
+        }            
+        function insterData() {                  
+            console.log("插入数据");                  
+            websqlInsterDataToTable(websqlTable,"小红","18","175cm","40kg");                 
+            websqlInsterDataToTable(websqlTable,"小黄","17","180cm","45kg");             
+            websqlInsterDataToTable(websqlTable,"小蓝","19","185cm","70kg");
+            websqlInsterDataToTable(websqlTable,"小绿","19","175cm","60kg");
+            websqlInsterDataToTable(websqlTable,"小青","21","162cm","52kg");
+            websqlInsterDataToTable(websqlTable,"小紫","25","195cm","80kg");
+        }              
+        function updateData() {                  
+            console.log("修改数据");                  
+            websqlUpdateAData(websqlTable,"小红","1000")              
+        }              
+        function deleteAData() {                  
+            console.log("删除一条数据");                  
+            websqlDeleteADataFromTable(websqlTable,"小蓝");             
+        }              
+        function deleteAllData() {                  
+            console.log("删除全部数据");                  
+            websqlDeleteAllDataFromTable(websqlTable);              
+        }              
+        function selectAData() {                  
+            console.log("查找一条数据");                  
+            websqlGetAData(websqlTable,"小紫");              
+        }              
+        function selectALlData() {                  
+            console.log("查找全部数据");                  
+            websqlGetAllData(websqlTable);              
+        }
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
